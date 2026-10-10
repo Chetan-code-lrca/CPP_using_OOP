@@ -16,7 +16,7 @@ jobs:
         run: g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror virtual_functions.cpp -o virtual_functions
       - name: Verify runtime output
         run: |
-          actual="$(./virtual_functions)"
-          expected="$(printf 'One\nTwo\nThree')"
-          printf '%s\n' "$actual"
-          test "$actual" = "$expected"
+          ./virtual_functions > actual-output.txt
+          printf 'One\nTwo\nThree\n' > expected-output.txt
+          cat actual-output.txt
+          cmp --silent actual-output.txt expected-output.txt
