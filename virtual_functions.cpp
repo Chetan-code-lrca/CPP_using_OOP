@@ -3,19 +3,19 @@ using namespace std;
 class baseA 
 {
     public:
-    virtual void display() override {
+    virtual void display() {
         std::cout << "One\n";
     }
 };
 class derivedB : public baseA {
     public:
-    void display() {
+    void display() override {
         std::cout << "Two\n";
     }
 };
 class derivedC : public derivedB {
     public:
-    void display() {
+    void display() override {
         std::cout << "Three\n";
     }
 };
