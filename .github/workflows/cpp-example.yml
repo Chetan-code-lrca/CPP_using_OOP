@@ -1,0 +1,22 @@
+name: C++ Example
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Compile with strict warnings
+        run: g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror virtual_functions.cpp -o virtual_functions
+      - name: Verify runtime output
+        run: |
+          actual="$(./virtual_functions)"
+          expected="$(printf 'One\nTwo\nThree')"
+          printf '%s\n' "$actual"
+          test "$actual" = "$expected"
