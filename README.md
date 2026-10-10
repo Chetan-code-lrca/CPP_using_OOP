@@ -28,7 +28,7 @@ cd CPP_using_OOP
 Compile the current source file with a C++ compiler such as `g++`:
 
 ```bash
-g++ "VIRTUAL FUNCTONS(Late Binding)" -std=c++17 -o virtual_functions
+g++ -std=c++17 -Wall -Wextra -pedantic virtual_functions.cpp -o virtual_functions
 ```
 
 Run it on Linux/macOS:
@@ -45,13 +45,7 @@ On Windows with MinGW:
 
 ## Code
 
-The source file is named:
-
-```text
-VIRTUAL FUNCTONS(Late Binding)
-```
-
-The filename contains a spelling mistake from the original exercise (`FUNCTONS`). It is kept as-is so the documented command matches the repository.
+The example source is stored in `virtual_functions.cpp`.
 
 ## What this demonstrates
 
@@ -63,4 +57,4 @@ The filename contains a spelling mistake from the original exercise (`FUNCTONS`)
 
 ## Notes
 
-This is a practice repository rather than a reusable C++ library. New examples can be added as separate source files as additional OOP concepts are covered.
+This is a practice repository rather than a reusable C++ library. GitHub Actions compiles the example and verifies its expected output on every push and pull request. New examples can be added as separate source files as additional OOP concepts are covered.
