@@ -1,14 +1,12 @@
 # C++ OOP Practice
 
-A small collection of C++ practice code focused on object-oriented programming concepts.
+A small collection of C++ examples for object-oriented programming coursework. The current example demonstrates **runtime polymorphism (late binding)** through a base-class pointer.
 
-## Current example
+## Example: virtual functions
 
-The repository currently contains an example of **runtime polymorphism (late binding)** using virtual functions.
+The program defines a base class and two derived classes. It stores pointers to the objects in an array of `const Base*` and calls `display()` through each pointer. The runtime type selects the overridden method.
 
-The program defines a base class and two derived classes, then stores objects through base-class pointers. Calling `display()` through those pointers demonstrates how the overridden function is selected at runtime.
-
-Example output:
+Expected output:
 
 ```text
 One
@@ -16,51 +14,31 @@ Two
 Three
 ```
 
-## Run locally
+## Requirements
 
-Clone the repository:
+- A C++17 compiler such as GCC or Clang
 
-```bash
-git clone https://github.com/Chetan-code-lrca/CPP_using_OOP.git
-cd CPP_using_OOP
-```
+## Compile and run
 
-Compile the current source file with a C++ compiler such as `g++`:
+Linux / macOS:
 
 ```bash
-g++ "VIRTUAL FUNCTONS(Late Binding)" -std=c++17 -o virtual_functions
-```
-
-Run it on Linux/macOS:
-
-```bash
+g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror virtual_functions.cpp -o virtual_functions
 ./virtual_functions
 ```
 
-On Windows with MinGW:
+Windows with MinGW:
 
 ```powershell
+g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror virtual_functions.cpp -o virtual_functions.exe
 .\virtual_functions.exe
 ```
 
-## Code
-
-The source file is named:
-
-```text
-VIRTUAL FUNCTONS(Late Binding)
-```
-
-The filename contains a spelling mistake from the original exercise (`FUNCTONS`). It is kept as-is so the documented command matches the repository.
-
-## What this demonstrates
+## Concepts demonstrated
 
 - Inheritance
-- Virtual functions
-- Function overriding
-- Base-class pointers
-- Runtime polymorphism
+- Virtual functions and `override`
+- Polymorphic calls through base-class pointers
+- Virtual destructors
 
-## Notes
-
-This is a practice repository rather than a reusable C++ library. New examples can be added as separate source files as additional OOP concepts are covered.
+GitHub Actions compiles the example with warnings treated as errors and checks its exact output on each push and pull request.
